@@ -1,10 +1,8 @@
 #ifndef _MOTEUR_H
 #define _MOTEUR_H
-#define F_CPU 8000000L
 
-#include <avr/io.h>
-#include <util/delay.h>
-#include <avr/interrupt.h>
+#include "init.h"
+#include <stdint.h>
 
 #define AVANT 1
 #define ARRIERE 0
@@ -23,7 +21,6 @@ class Moteur{
 		const float& getVitesseDroite() const;
 		const float& getVitesseGauche() const;
 
-		static void initialisation();
 
 	private:
 		int direction_;

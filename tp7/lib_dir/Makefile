@@ -29,7 +29,7 @@ PROJECTNAME=librairie
 # Utilisez le suffixe .cpp pour les fichiers C++
 # Listez tous les fichiers a compiler, separes par
 # un espace. exemple: 'tp1.c tp2.cpp':
-PRJSRC= can.cpp led.cpp moteur.cpp robot.cpp minuterie.cpp uart.cpp
+PRJSRC= can.cpp led.cpp moteur.cpp robot.cpp minuterie.cpp uart.cpp init.cpp boutonPoussoir.cpp
 
 # Inclusions additionnels (ex: -I/path/to/mydir)
 INC=
