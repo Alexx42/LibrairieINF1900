@@ -11,18 +11,33 @@ Boutton::~Boutton() {
 
 }
 
-void Boutton::initINT0() {
-    cli ();
-    EIMSK |= (1 << INT0);
-    EICRA |= 1 << ISC00;
-    EICRA |= 1 << ISC01; 
-    sei ();
-}
-
-void Boutton::initINT1(){
-    cli ();
-    EIMSK |= 1 << INT1;
-    EICRA |= 1 << ISC10;
-    EICRA |= 1 << ISC11;  
-    sei ();
+bool estAppuyé(){
+    if(port_ == 'A' || port_ == 'a') {
+        if(PINA & (1<<broche_)){
+            _delay_ms(4);
+            return PINA & (1<<broche_);
+        }   
+        return false;
+	}
+	if(port_ == 'B' || port_ == 'b') {
+        if(PINB & (1<<broche_)){
+            _delay_ms(4);
+            return PINB & (1<<broche_);
+        }   
+        return false;
+	}
+	if(port_ == 'C' || port_  == 'c') {
+		if(PINC & (1<<broche_)){
+            _delay_ms(4);
+            return PINC & (1<<broche_);
+        }   
+        return false;
+	}
+	if(port_ == 'D' || port_ == 'd') {
+		if(PIND & (1<<broche_)){
+            _delay_ms(4);
+            return PIND & (1<<broche_);
+        }   
+        return false;
+	}
 }
