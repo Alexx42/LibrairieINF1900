@@ -15,7 +15,8 @@ int main() {
 	Minuterie min;
 	Moteur moteur;
 
-	DDRD = 0xff;
+	DDRD = 0b11111011;
+	DDRA = 0xff;
 	moteur.setVitesseDroite(20);
 	_delay_ms(1000);
 	moteur.setVitesseGauche(50);
@@ -26,7 +27,6 @@ int main() {
 		uart.transmissionMessage("test\n", 5);
 		if (bouton.estAppuye()) {
 			led.mettreCouleur(0x02);
-			break ;
 		}
 	}
 	return 0;
