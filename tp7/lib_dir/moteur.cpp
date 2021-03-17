@@ -13,14 +13,18 @@ void Moteur::setDirection(int direction) {
 
 void Moteur::setVitesseUniform(uint8_t duty) {
 	minuterie.setDureeAB(duty);
+	vitesseDroite_ = duty;
+	vitesseGauche_ = duty;
 }
 
 void Moteur::setVitesseDroite(uint8_t duty) {
 	minuterie.setDureeA(duty);
+	vitesseDroite_ = duty;
 }
 
 void Moteur::setVitesseGauche(uint8_t duty) {
 	minuterie.setDureeB(duty);
+	vitesseGauche_ = duty;
 }
 
 const int& Moteur::getDirection() const {
