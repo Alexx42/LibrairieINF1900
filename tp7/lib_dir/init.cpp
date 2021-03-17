@@ -33,11 +33,10 @@ void init::initPWM() {
 	OCR1B = 0;
 }
 
-void init::initCTCMode(uint16_t duree) {
+void init::initCTCMode() {
 	// mode CTC du timer 1 avec horloge divisée par 1024
 	// interruption après la durée spécifiée
 	TCNT1 = 0x00;
-	OCR1A = duree;
 	TCCR1A = 0x00;
 	TCCR1B = (1 << CS10) | (1 << CS12) | (1 << WGM12);
 	TCCR1C = 0x00;

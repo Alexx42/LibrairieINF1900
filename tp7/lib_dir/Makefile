@@ -68,8 +68,6 @@ OBJCOPY=avr-objcopy
 AVRDUDE=avrdude
 #pour supprimer les fichiers lorsque l'on appel make clean
 REMOVE=rm -f
-# HEXFORMAT -- format pour les fichiers produient .hex
-HEXFORMAT=ihex
 
 
 
@@ -124,7 +122,7 @@ OBJDEPS=$(CFILES:.c=.o) \
 
 # Make all permet simplement de compiler le projet
 #
-all: $(TRG) $(HEXROMTRG)
+all: $(TRG)
 
 # Implementation de la cible
 $(TRG): $(OBJDEPS)
@@ -145,14 +143,10 @@ $(TRG): $(OBJDEPS)
 # Pour plus d'information sur cette section, consulter:
 # http://bit.ly/2580FU8
 
-# Make install permet de compiler le projet puis
-# d'ecrire le programme en memoire flash dans votre
-# microcontroleur. Celui-ci doit etre branche par cable USB
-
 # Make clean permet d'effacer tout les fichiers generes
 # lors de la compilation
 clean:
-	$(REMOVE) $(TRG) $(TRG).a $(OBJDEPS) *.d
+	$(REMOVE) $(TRG) $(OBJDEPS) *.d
 
 # Pour plus d'information sur les phony target, consulter:
 # http://bit.ly/1WBQe61

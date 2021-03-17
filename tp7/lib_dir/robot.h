@@ -5,7 +5,6 @@
 #include "uart.h"
 #include "moteur.h"
 #include "f_cpu.h"
-#include "minuterie.h"
 #include "boutonPoussoir.h"
 
 struct Robot {

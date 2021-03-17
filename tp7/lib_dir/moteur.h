@@ -1,14 +1,14 @@
 #ifndef _MOTEUR_H
 #define _MOTEUR_H
 
-#include "init.h"
+#include "minuterie.h"
 #include <stdint.h>
 
 #define AVANT 1
 #define ARRIERE 0
 
 class Moteur{
-    public:
+	public:
 		Moteur();
 		~Moteur();
 
@@ -21,8 +21,8 @@ class Moteur{
 		const float& getVitesseDroite() const;
 		const float& getVitesseGauche() const;
 
-
 	private:
+		Minuterie minuterie;
 		int direction_;
 		float vitesseDroite_;
 		float vitesseGauche_;
