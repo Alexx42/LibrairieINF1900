@@ -10,7 +10,7 @@ class UART {
 
 		void transmissionMessage(const char *message, uint32_t taille);
 	private:
-		void transmissionUART(uint8_t donneee);
+		void transmissionUART(uint8_t donnee);
 };
 
 #endif 

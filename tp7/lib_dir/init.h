@@ -5,7 +5,6 @@
 
 namespace init {
 	void initINT0();
-	void initINT1();
 	void initUART();
 	void initPWM();
 	void initCTCMode(uint16_t d);

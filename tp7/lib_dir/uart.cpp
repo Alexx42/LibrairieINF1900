@@ -1,9 +1,9 @@
 #include "uart.h"
-
+#include "init.h"
 #include <avr/eeprom.h>
 
 UART::UART() {
-
+	init::initUART();
 }
 
 UART::~UART() {
